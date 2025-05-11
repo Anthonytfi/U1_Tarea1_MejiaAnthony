@@ -19,4 +19,3 @@ Cómo Usar
     <h2 slot="nombre">Anthony Mejía</h2>
     <p slot="descripcion">Estudiante de Ingeniería</p>
 </tarjeta-usuario>
-
