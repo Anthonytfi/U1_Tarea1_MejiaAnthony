@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Usuario</title>
+    <title>Tarea 2 - Integración de Componentes</title>
     <script src="tarjeta-usuario.js"></script>
+    <script src="formulario-actualizar.js"></script>
 </head>
 <body>
-    <h1>Ejemplo de Tarjeta de Usuario</h1>
-    
-    <!-- Tarjeta con tema claro -->
-    <tarjeta-usuario tema="claro">
-        <h2 slot="nombre">Anthony Mejia</h2>
-        <p slot="descripcion">Estudiante de Ingeniería en Tecnologías de la Información</p>
-    </tarjeta-usuario>
-    
-    <!-- Tarjeta con tema oscuro -->
+    <h1>Mi Proyecto de Componentes</h1>
     <tarjeta-usuario tema="oscuro">
-        <h2 slot="nombre">Geovanny Gaibor</h2>
-        <p slot="descripcion">Apasionada por la programación web</p>
+        <h2 slot="nombre">Anthony Mejia</h2>
+        <p slot="descripcion">Estudiante de 6to semestre</p>
     </tarjeta-usuario>
+    <formulario-actualizar>
+        <button slot="boton-enviar">Actualizar Nombre</button>
+    </formulario-actualizar>
 </body>
 </html>
