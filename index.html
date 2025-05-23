@@ -3,22 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Usuario</title>
-    <script src="tarjeta-usuario.js"></script>
+    <title>Ejemplo de Componentes Modularizados</title>
+    <script type="module" src="espe-formulario.js"></script>
+    <script type="module" src="espe-modal.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+            text-align: center;
+        }
+        espe-formulario {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Ejemplo de Tarjeta de Usuario</h1>
-    
-    <!-- Tarjeta con tema claro -->
-    <tarjeta-usuario tema="claro">
-        <h2 slot="nombre">Anthony Mejia</h2>
-        <p slot="descripcion">Estudiante de Ingeniería en Tecnologías de la Información</p>
-    </tarjeta-usuario>
-    
-    <!-- Tarjeta con tema oscuro -->
-    <tarjeta-usuario tema="oscuro">
-        <h2 slot="nombre">Geovanny Gaibor</h2>
-        <p slot="descripcion">Apasionada por la programación web</p>
-    </tarjeta-usuario>
+    <div class="container">
+        <h1>Demostración de Componentes</h1>
+        <espe-formulario>
+            <input type="text" slot="campo1" placeholder="Nombre">
+            <input type="email" slot="campo2" placeholder="Correo">
+        </espe-formulario>
+        <button id="abrirModal">Abrir Modal</button>
+        <espe-modal id="modal">
+            <span slot="titulo">Bienvenido</span>
+            <p slot="contenido">Todo bonito, se merece un 20/20</p>
+        </espe-modal>
+    </div>
+
+    <script>
+        const modal = document.querySelector('#modal');
+        const abrirBtn = document.querySelector('#abrirModal');
+
+        abrirBtn.addEventListener('click', () => {
+            modal.setAttribute('abierto', '');
+        });
+
+        document.addEventListener('cerrar-modal', () => {
+            console.log('Evento cerrar-modal recibido: el modal se ha cerrado.');
+        });
+    </script>
 </body>
 </html>
